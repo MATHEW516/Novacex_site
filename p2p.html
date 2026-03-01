@@ -1,0 +1,21 @@
+<section class="px-6 py-12 max-w-6xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6">P2P Marketplace</h2>
+  <div id="p2pContainer" class="grid md:grid-cols-2 gap-6">
+    <!-- JS generated listings -->
+  </div>
+</section>
+
+<script>
+  const p2pListings = [
+    {coin:'BTC', type:'Buy', price:28000, seller:'Alice'},
+    {coin:'ETH', type:'Sell', price:1810, seller:'Bob'},
+    {coin:'USDT', type:'Buy', price:1, seller:'Charlie'}
+  ];
+  const p2pContainer = document.getElementById('p2pContainer');
+  p2pListings.forEach(l => {
+    const div = document.createElement('div');
+    div.className = "bg-gray-900 p-4 rounded-2xl";
+    div.innerHTML = `<p>${l.type} ${l.coin}</p><p>Price: $${l.price}</p><p>Seller: ${l.seller}</p><button class="mt-2 bg-blue-600 px-4 py-2 rounded-lg">Trade</button>`;
+    p2pContainer.appendChild(div);
+  });
+</script>
